@@ -24,8 +24,10 @@ app.use((req, res, next)=>{
 //routes
 //app.use('/api', infoRoutes)
 
-const date = new Date() 
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
+
+const date = new Date().toISOString()
+
 
 app.get('/api', (req,res) => {
     const {slack_name, track} = req.query
