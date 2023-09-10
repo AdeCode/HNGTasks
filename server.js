@@ -26,7 +26,7 @@ app.use((req, res, next)=>{
 
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
 
-const date = new Date().toISOString().slice(0, -5) + 'Z';
+const date = new Date().toISOString().slice(0, 19) + 'Z'
 
 
 app.get('/api', (req,res) => {
