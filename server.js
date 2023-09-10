@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const infoRoutes = require('./routes/info')
 var cors = require('cors')
-const moment = require("moment")
 
 //express app
 const app = express()
@@ -27,8 +26,7 @@ app.use((req, res, next)=>{
 
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
 
-//const date = new Date().toISOString()
-const date = moment.utc().format()
+const date = new Date().toISOString().slice(0, -5) + 'Z';
 
 
 app.get('/api', (req,res) => {
