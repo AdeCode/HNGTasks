@@ -28,7 +28,7 @@ app.use((req, res, next)=>{
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
 const current_day = moment().day()
     const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const utc_time = moment.utc().format()
+    const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]')
     console.log(utc_time)
 
 
