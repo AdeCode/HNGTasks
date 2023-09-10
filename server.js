@@ -24,7 +24,11 @@ app.use((req, res, next)=>{
 //routes
 app.use('/api', infoRoutes)
 
-
+app.get('/', ()=>{
+    return res.json({
+        message: 'Welcome to HNG'
+    })
+})
 
 //listen for requests
 app.listen(process.env.PORT, ()=>{
