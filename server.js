@@ -26,9 +26,9 @@ app.use((req, res, next)=>{
 
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
 console.log(new Date().toISOString())
-console.log(new Date().toISOString().split('.')[0]+'Z')
+console.log(new Date().toISOString())
 //const date = new Date().toISOString().slice(0, 19) + 'Z'
-const date = new Date().toISOString().split('.')[0]+'Z'
+const date = new Date().toISOString()
 
 app.get('/api', (req,res) => {
     const {slack_name, track} = req.query
