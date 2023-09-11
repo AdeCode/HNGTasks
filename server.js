@@ -36,7 +36,7 @@ app.get('/api', (req,res) => {
     return res.status(200).json({
         slack_name:slack_name,
         current_day:day,
-        utc_time: date,
+        //utc_time: date,
         track: track,
         github_file_url:'https://github.com/AdeCode/HNGTasks/blob/main/server.js',
         github_repo_url:'https://github.com/AdeCode/HNGTasks/tree/main',
