@@ -25,10 +25,9 @@ app.use((req, res, next)=>{
 //routes
 //app.use('/api', infoRoutes)
 
-const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
-const date = new Date().toISOString().split('.')[0]+'Z'
 const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]')
-console.log(date)
+const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
+// const date = new Date().toISOString().split('.')[0]+'Z'
 
 
 app.get('/api', (req,res) => {
