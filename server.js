@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const infoRoutes = require('./routes/info')
 var cors = require('cors')
-// const moment = require('moment')
+const moment = require('moment')
 
 //express app
 const app = express()
@@ -25,9 +25,10 @@ app.use((req, res, next)=>{
 //routes
 //app.use('/api', infoRoutes)
 
+const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]')
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
 const date = new Date().toISOString().split('.')[0]+'Z'
-console.log(date)
+console.log(utc_time)
 
 app.get('/api', (req,res) => {
     const {slack_name, track} = req.query
