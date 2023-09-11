@@ -26,8 +26,9 @@ app.use((req, res, next)=>{
 //app.use('/api', infoRoutes)
 
 const day = new Date().toLocaleDateString('en-us', { weekday:"long"}) 
+const date = new Date().toISOString().split('.')[0]+'Z'
 const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]')
-console.log(utc_time)
+console.log(date)
 
 
 app.get('/api', (req,res) => {
@@ -35,7 +36,7 @@ app.get('/api', (req,res) => {
     return res.status(200).json({
         slack_name:slack_name,
         current_day:day,
-        utc_time: utc_time,
+        utc_time: date,
         track: track,
         github_file_url:'https://github.com/AdeCode/HNGTasks/blob/main/server.js',
         github_repo_url:'https://github.com/AdeCode/HNGTasks/tree/main',
